@@ -13,6 +13,7 @@ for (let i = 0; i < 3; i++) {
     myS.id = map[i][0];
     myS.style.backgroundColor = map[i][1];
     myS.style.width = map[i][2] + "px";
+    myS.style.width = map[i][2] + "px";
     myS.style.height = map[i][3] + "px";
     myS.style.opacity = 0.5;
     myWorld.appendChild(myS);
