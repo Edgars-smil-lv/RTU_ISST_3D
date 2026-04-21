@@ -1,7 +1,11 @@
 let myW = document.getElementById("world");
 
+let lvl_one = [
+    {name: "floor", posX: 0, posY: 100, posZ: 0, rotX: 90, rotY: 0, rotZ: 0, background: "", width: 2000, height: 2000, opacity: 1, bgImage: "url('assets/floor.jpg')"}
+];
+
 let map = [
-    { posX: 0, posY: 0, posZ: 200, rotX: 0, rotY: 0, rotZ: 0, background: "#3437db", width: 1200, height: 800, opacity: 0.1, name: "square" },
+    { posX: 0, posY: 0, posZ: 200, rotX: 0, rotY: 0, rotZ: 0, background: "#3437db", width: 1200, height: 800, opacity: 0.1, name: "backwall" },
     { posX: 0, posY: 0, posZ: -200, rotX: 0, rotY: 0, rotZ: 0, background: "#400147", width: 1200, height: 800, opacity: 1, name: "square" },
     { posX: 0, posY: 400, posZ: 0, rotX: 90, rotY: 0, rotZ: 0, background: "#34db9b", width: 1200, height: 800, opacity: 1, name: "square" },
     { width: 1500, height: 800, opacity: 1, name: "square" },
@@ -15,10 +19,11 @@ function drawMap(myArray) {
         square.id = `${myArray[i].name}0${i + 1}`;
         square.style.position = `absolute`;
         square.style.backgroundColor = myArray[i].background ? myArray[i].background : "orange";
+        square.style.backgroundImage = myArray[i].bgImage;
         square.style.width = `${myArray[i].width}px`;
         square.style.height = `${myArray[i].height}px`;
         square.style.opacity = myArray[i].opacity;
-        square.style.transform = `translate3d(${myArray[i].posX}px, ${myArray[i].posY}px, ${myArray[i].posZ}px) rotateX(${myArray[i].rotX}deg) rotateY(${myArray[i].rotY}deg) rotateZ(${myArray[i].rotZ}deg)`;
+        square.style.transform = `translate3d(${myW.clientWidth / 2 - myArray[i].width / 2 + myArray[i].posX}px, ${myW.clientHeight / 2 - myArray[i].height / 2 + myArray[i].posY}px, ${myArray[i].posZ}px) rotateX(${myArray[i].rotX}deg) rotateY(${myArray[i].rotY}deg) rotateZ(${myArray[i].rotZ}deg)`;
         myW.appendChild(square);
     }
 }
@@ -29,8 +34,10 @@ let map2 = [
     { posX: 320, posY: 440, posZ: 100, rotX: 0, rotY: 0, rotZ: 0, background: "#000000", width: 10, height: 10, opacity: 1, name: "window" }
 ];
 
-drawMap(map2);
-drawMap(map);
+// drawMap(map2);
+// drawMap(map);
+
+drawMap(lvl_one);
 
 var dz = 0;
 var vel = 0;
@@ -63,4 +70,4 @@ function update() {
     dx += velx;
 }
 
-let game = setInterval(update, 100);
+let game = setInterval(update, 10);
