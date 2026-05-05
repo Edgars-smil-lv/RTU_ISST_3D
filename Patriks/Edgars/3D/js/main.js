@@ -1,8 +1,10 @@
 let myW = document.getElementById("world");
 
 let lvl_one = [
-    {name: "floor", posX: 0, posY: 100, posZ: 0, rotX: 90, rotY: 0, rotZ: 0, background: "", width: 2000, height: 2000, opacity: 1, bgImage: "url('assets/floor.jpg')"},
-    {name: "wall", posX: 0, posY: 0, posZ: 0, rotX: 0, rotZ: 0, rotZ: 0, background: "", width: 200, height: 200, opacity: 1, bgImage: "url('assets/wall.jpg')"},
+    {name: "floor", posX: 0, posY: 100, posZ: 0, rotX: 90, rotY: 0, rotZ: 0, background: "", width: 2002, height: 2002, opacity: 1, bgImage: "url('assets/floor.jpg')"},
+    {name: "wall", posX: 0, posY: 0, posZ: -1000, rotX: 0, rotY: 0, rotZ: 0, background: "", width: 2002, height: 202, opacity: 1, bgImage: "url('assets/wall.jpg')"},
+    {name: "leftwall", posX: -1000, posY: 0, posZ: 0, rotX: 0, rotY: 90, rotZ: 0, background: "", width: 2002, height: 202, opacity: 1, bgImage: "url('assets/wall.jpg')"},
+    {name: "rightwall", posX: 1000, posY: 0, posZ: 0, rotX: 0, rotY: 90, rotZ: 0, background: "", width: 2002, height: 202, opacity: 1, bgImage: "url('assets/wall.jpg')"},
 ];
 
 let map = [
