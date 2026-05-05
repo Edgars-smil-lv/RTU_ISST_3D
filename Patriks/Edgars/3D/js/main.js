@@ -42,9 +42,8 @@ let map2 = [
 
 drawMap(lvl_one);
 
-var dz = 0;
+var dx = dz = dry = 0;
 var vel = 0;
-var dx = 0;
 var velx =0;
 document.addEventListener("keydown", (e) => {
     if(e.code == "ArrowUp" || e.code == "KeyW"){
@@ -67,8 +66,12 @@ document.addEventListener("keyup", (e) => {
     velx = 0;
 });
 
+document.addEventListener("mousemove", (e) => {
+    console.log(e.movementX, e.movementY);
+});
+
 function update() {
-    myW.style.transform = `translate3d(${dx}px, ${0}px, ${dz}px)`;
+    myW.style.transform = `translateZ(600px) RotateY(${dry}deg) translate3d(${dx}px, ${0}px, ${dz}px)`;
     dz += vel;
     dx += velx;
 }
