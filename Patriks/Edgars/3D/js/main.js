@@ -17,7 +17,7 @@ let map = [
 function drawMap(myArray) {
     for (let i = 0; i < myArray.length; i++) {
         let square = document.createElement("div");
-        square.id = `${myArray[i].name}0${i}`;
+        square.id = `${myArray[i].name}_${i}`;
         square.style.position = `absolute`;
         square.style.backgroundColor = myArray[i].background ? myArray[i].background : "orange";
         square.style.backgroundImage = myArray[i].bgImage;
